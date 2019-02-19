@@ -1,0 +1,43 @@
+﻿{
+  "ContextClassName": "NORTHWNDContext",
+  "DefaultDacpacSchema": null,
+  "IdReplace": false,
+  "IncludeConnectionString": true,
+  "OutputPath": "Model",
+  "ProjectRootNamespace": "OMSWebService",
+  "SelectedToBeGenerated": 0,
+  "Tables": [
+    {
+      "HasPrimaryKey": true,
+      "Name": "dbo.Categories"
+    },
+    {
+      "HasPrimaryKey": true,
+      "Name": "dbo.Customers"
+    },
+    {
+      "HasPrimaryKey": true,
+      "Name": "dbo.Order Details"
+    },
+    {
+      "HasPrimaryKey": true,
+      "Name": "dbo.Orders"
+    },
+    {
+      "HasPrimaryKey": true,
+      "Name": "dbo.Products"
+    },
+    {
+      "HasPrimaryKey": true,
+      "Name": "dbo.Shippers"
+    },
+    {
+      "HasPrimaryKey": true,
+      "Name": "dbo.Suppliers"
+    }
+  ],
+  "UseDatabaseNames": false,
+  "UseFluentApiOnly": true,
+  "UseHandleBars": false,
+  "UseInflector": false
+}
