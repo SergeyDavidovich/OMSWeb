@@ -30,26 +30,30 @@ namespace OMSWebService
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            string connection = "Data Source=.\\SQLEXPRESS;AttachDbFilename=C:\\Northwind\\NORTHWND.MDF;Integrated Security=True";
+            //TODO: Разобраться с подключением ДБ
+            string connection =
+                @"Data Source = (localdb)\mssqllocaldb; AttachDbFilename = C:\GitHubMy\OMSWebService\OMSWebService\App_Data\NORTHWND.MDF; Integrated Security = True";
+
+            //string connection = @"Data Source = (localdb)\mssqllocaldb; AttachDbFilename = |DataDirectory|\NORTHWND.MDF; Integrated Security = True";
 
             services.AddDbContext<NORTHWNDContext>(options => options.UseSqlServer(connection));
         }
 
-    // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-    {
-        if (env.IsDevelopment())
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseDeveloperExceptionPage();
-        }
-        else
-        {
-            // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-            app.UseHsts();
-        }
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseHsts();
+            }
 
-        app.UseHttpsRedirection();
-        app.UseMvc();
+            app.UseHttpsRedirection();
+            app.UseMvc();
+        }
     }
-}
 }

@@ -21,7 +21,7 @@ namespace OMSWebService.Controllers
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            return "value";
+            return id.ToString();
         }
 
         // POST api/values

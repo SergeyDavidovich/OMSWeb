@@ -11,7 +11,7 @@ using OMSWebService.Model;
 
 namespace OMSWebService.Controllers
 {
-    [Route("api/products")]
+    [Route("api/[controller]")]
     [ApiController]
     public class ProductsController : ControllerBase
     {
@@ -22,27 +22,25 @@ namespace OMSWebService.Controllers
             _context = context;
         }
 
-        // GET: api/products
+        // GET: api/product
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
             return await _context.Products.ToListAsync();
         }
 
-        // GET: api/Todo/5
+        // GET: api/product/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Product>> GetProduct(long id)
+        public async Task<ActionResult<Product>> GetProduct(int id)
         {
-            var todoItem = await _context.Products.FindAsync(id);
-
-            if (todoItem == null)
+            var product = await _context.Products.FindAsync(id);
+            if (product == null)
             {
                 return NotFound();
             }
-
-            return todoItem;
+            return product;
         }
-
+                                                   
         // POST api/<controller>
         [HttpPost]
         public void Post([FromBody]string value)
