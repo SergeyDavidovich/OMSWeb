@@ -15,6 +15,9 @@ using Microsoft.EntityFrameworkCore;
 using OMSWebService.Model;
 using OMSWebService.Data;
 
+using NJsonSchema;
+using NSwag.AspNetCore;
+
 namespace OMSWebService
 {
     public class Startup
@@ -38,6 +41,9 @@ namespace OMSWebService
             //string connection = @"Data Source = (localdb)\mssqllocaldb; AttachDbFilename = |DataDirectory|\NORTHWND.MDF; Integrated Security = True";
 
             services.AddDbContext<NORTHWNDContext>(options => options.UseSqlServer(connection));
+
+            // Register the Swagger services
+            services.AddSwaggerDocument();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +58,10 @@ namespace OMSWebService
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            // Register the Swagger generator and the Swagger UI middlewares
+            app.UseSwagger();
+            app.UseSwaggerUi3();
 
             app.UseHttpsRedirection();
             app.UseMvc();
