@@ -1,8 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using OMSWebService.Model;
 
-namespace OMSWebService.Model
+namespace OMSWebService.Data
 {
     public partial class NORTHWNDContext : DbContext
     {

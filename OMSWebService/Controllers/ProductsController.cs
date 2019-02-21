@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 using Microsoft.EntityFrameworkCore;
 using OMSWebService.Model;
+using OMSWebService.Data;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -40,23 +41,52 @@ namespace OMSWebService.Controllers
             }
             return product;
         }
-                                                   
-        // POST api/<controller>
+        
+        // POST: api/products
         [HttpPost]
-        public void Post([FromBody]string value)
+        public async Task<ActionResult<Product>> PostProduct(Product item)
         {
+            _context.Products.Add(item);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetProduct), 
+                new {
+                    id = item.ProductId,
+                    ProductName = item.ProductName
+                }, 
+                item);
         }
 
-        // PUT api/<controller>/5
+        // PUT: api/products/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public async Task<IActionResult> PutProduct(int id, Product item)
         {
+            if (id != item.ProductId)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(item).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+
+            return NoContent();
         }
 
-        // DELETE api/<controller>/5
+        // DELETE: api/products/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> DeleteProduct(int id)
         {
+            var todoItem = await _context.Products.FindAsync(id);
+
+            if (todoItem == null)
+            {
+                return NotFound();
+            }
+
+            _context.Products.Remove(todoItem);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
         }
     }
 }

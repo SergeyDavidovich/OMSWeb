@@ -13,6 +13,7 @@ using Microsoft.Extensions.Options;
 
 using Microsoft.EntityFrameworkCore;
 using OMSWebService.Model;
+using OMSWebService.Data;
 
 namespace OMSWebService
 {
