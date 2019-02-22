@@ -61,7 +61,7 @@ namespace OMSWebService
 
                     document.Info.License = new NSwag.SwaggerLicense
                     {
-                        Name = "Use under Apache Version 2.0 Licence",
+                        Name = "Use under Apache 2.0 Licence",
                         Url = "http://www.apache.org/licenses/LICENSE-2.0.html"
                     };
                 };
