@@ -43,7 +43,29 @@ namespace OMSWebService
             services.AddDbContext<NORTHWNDContext>(options => options.UseSqlServer(connection));
 
             // Register the Swagger services
-            services.AddSwaggerDocument();
+            services.AddSwaggerDocument(config =>
+            {
+                config.PostProcess = document =>
+                {
+                    document.Info.Version = "v1";
+                    document.Info.Title = "OMS Web Service API";
+                    document.Info.Description = "Backend for Order Managment System";
+                    //document.Info.TermsOfService = "None";
+
+                    document.Info.Contact = new NSwag.SwaggerContact
+                    {
+                        Name = "Stupeni .NET",
+                        Email = "writesd@hotmail.com",
+                        Url = "https://github.com/StupeniNET/OMSWebService"
+                    };
+
+                    document.Info.License = new NSwag.SwaggerLicense
+                    {
+                        Name = "Use under Apache Version 2.0 Licence",
+                        Url = "http://www.apache.org/licenses/LICENSE-2.0.html"
+                    };
+                };
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
