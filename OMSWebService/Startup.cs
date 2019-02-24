@@ -17,6 +17,7 @@ using OMSWebService.Data;
 
 using NJsonSchema;
 using NSwag.AspNetCore;
+using Newtonsoft.Json;
 
 namespace OMSWebService
 {
@@ -65,6 +66,11 @@ namespace OMSWebService
                         Url = "http://www.apache.org/licenses/LICENSE-2.0.html"
                     };
                 };
+            });
+
+
+            services.AddMvc().AddJsonOptions(options => {
+                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             });
         }
 

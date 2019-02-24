@@ -11,7 +11,7 @@ namespace OMSWebService.Model
         public short Quantity { get; set; }
         public float Discount { get; set; }
 
-        public virtual Orders Order { get; set; }
+        public virtual Order Order { get; set; }
         public virtual Product Product { get; set; }
     }
 }

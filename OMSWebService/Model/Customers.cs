@@ -7,7 +7,7 @@ namespace OMSWebService.Model
     {
         public Customers()
         {
-            Orders = new HashSet<Orders>();
+            Orders = new HashSet<Order>();
         }
 
         public string CustomerId { get; set; }
@@ -22,6 +22,6 @@ namespace OMSWebService.Model
         public string Phone { get; set; }
         public string Fax { get; set; }
 
-        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }
