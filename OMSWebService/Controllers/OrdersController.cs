@@ -22,7 +22,7 @@ namespace OMSWebService.Controllers
             _context = context;
         }
 
-        // GET: api/orders
+        // GET: api/orders?include_details=true
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Order>>> GetOrders(bool include_details = false)
         {
@@ -51,33 +51,26 @@ namespace OMSWebService.Controllers
             }
             return order;
         }
+
+        // POST: api/products
+        [HttpPost]
+        public async Task<ActionResult<Order>> PostProduct(Order order)
+        {
+            _context.Orders.Add(order);
+
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetOrder),
+                new
+                {
+                    id = order.OrderId,
+                    orderDate = order.OrderDate
+                },
+                order);
+        }
+
     }
-
-    ////GET: api/orders/5
-    //[HttpGet("{id}")]
-    //public async Task<ActionResult<Order>> GetOrder(int id)
-    //{
-    //    var order = await _context.Orders.Where(d => d.OrderId == id).FirstAsync<Order>();
-
-    //    if (order == null)
-    //    {
-    //        return NotFound();
-    //    }
-    //    return order;
-    //}
-
-    ////GET: api/ordersdetails/5
-    //[HttpGet("{id1}")]
-    //public async Task<ActionResult<IEnumerable<OrderDetails>>> GetOrderDetails(int id1)
-    //{
-    //    var orders = await _context.OrderDetails.Where(d => d.OrderId == id1).ToListAsync<OrderDetails>();
-
-    //    if (orders == null)
-    //    {
-    //        return NotFound();
-    //    }
-    //    return orders;
-    //}
-
 }
+
+
 
