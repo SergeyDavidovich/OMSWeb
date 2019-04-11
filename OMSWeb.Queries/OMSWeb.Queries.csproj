@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OMSWeb.Api.Common\OMSWeb.Api.Common.csproj" />
+    <ProjectReference Include="..\OMSWeb.Api.Models\OMSWeb.Api.Models.csproj" />
+    <ProjectReference Include="..\OMSWeb.Data.Access\OMSWeb.Data.Access.csproj" />
+    <ProjectReference Include="..\OMSWeb.Data.Model\OMSWeb.Data.Model.csproj" />
+  </ItemGroup>
+
+</Project>

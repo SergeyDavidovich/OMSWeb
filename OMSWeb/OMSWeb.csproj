@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\**" />
+    <Compile Remove="Model\**" />
+    <Compile Remove="Screenshots\**" />
+    <Content Remove="Data\**" />
+    <Content Remove="Model\**" />
+    <Content Remove="Screenshots\**" />
+    <EmbeddedResource Remove="Data\**" />
+    <EmbeddedResource Remove="Model\**" />
+    <EmbeddedResource Remove="Screenshots\**" />
+    <None Remove="Data\**" />
+    <None Remove="Model\**" />
+    <None Remove="Screenshots\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.3" />
+    <PackageReference Include="NSwag.AspNetCore" Version="12.0.18" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OMSWeb.Api.Common\OMSWeb.Api.Common.csproj" />
+    <ProjectReference Include="..\OMSWeb.Api.Models\OMSWeb.Api.Models.csproj" />
+    <ProjectReference Include="..\OMSWeb.Data.Access\OMSWeb.Data.Access.csproj" />
+    <ProjectReference Include="..\OMSWeb.Data.Model\OMSWeb.Data.Model.csproj" />
+    <ProjectReference Include="..\OMSWeb.Queries\OMSWeb.Queries.csproj" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
+
+</Project>
