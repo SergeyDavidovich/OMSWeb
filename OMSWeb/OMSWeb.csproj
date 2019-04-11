@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
@@ -8,16 +8,12 @@
   <ItemGroup>
     <Compile Remove="Data\**" />
     <Compile Remove="Model\**" />
-    <Compile Remove="Screenshots\**" />
     <Content Remove="Data\**" />
     <Content Remove="Model\**" />
-    <Content Remove="Screenshots\**" />
     <EmbeddedResource Remove="Data\**" />
     <EmbeddedResource Remove="Model\**" />
-    <EmbeddedResource Remove="Screenshots\**" />
     <None Remove="Data\**" />
     <None Remove="Model\**" />
-    <None Remove="Screenshots\**" />
   </ItemGroup>
 
   <ItemGroup>
