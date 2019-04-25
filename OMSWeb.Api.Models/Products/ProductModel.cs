@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace OMSWeb.Api.Models.Products
 {
-    public class GetProductModel
+    public class ProductModel
     {
         public int ProductId { get; set; }
         public string ProductName { get; set; }
@@ -14,6 +14,8 @@ namespace OMSWeb.Api.Models.Products
         public short? UnitsInStock { get; set; }
         public short? UnitsOnOrder { get; set; }
         public short? ReorderLevel { get; set; }
-        public bool Discontinued { get; set; }
+        //public bool Discontinued { get; set; }
+
+        public string ModelType { get; set; }
     }
 }

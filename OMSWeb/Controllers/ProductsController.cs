@@ -33,22 +33,44 @@ namespace OMSWeb.Controllers
 
         //GET: api/products
         [HttpGet]
-        public ActionResult<IEnumerable<GetProductModel>> GetProducts()
+        public ActionResult<IEnumerable<ProductModel>> GetProducts()
         {
+            var result = _query.Get();
             var items =
-                _mapper.Map<IEnumerable<Product>, List<GetProductModel>>(_query.Get());
+                _mapper.Map<IEnumerable<Product>, List<ProductModel>>(result);
             return items;
         }
 
         //GET: api/product/5
         [HttpGet("{id}")]
-        public ActionResult<GetProductModel> GetProduct(int id)
+        public ActionResult<ProductModel> GetProduct(int id)
         {
-            var product = _mapper.Map<Product, GetProductModel>(_query.Get(id));
+            var item = _query.Get(id);
+            var product = _mapper.Map<ProductModel>(item);
             return product;
         }
+        // POST: api/products
+        [HttpPost]
+        public async Task<ProductModel> Post([FromBody]CreateProductModel requestModel)
+        {
+            var item = await _query.CreateAsync(requestModel);
+            var model = _mapper.Map<ProductModel>(item);
+            return model;
+        }
 
+        [HttpPut("{id}")]
+        public async Task<ProductModel> Put(int id, [FromBody]UpdateProductModel requestModel)
+        {
+            var item = await _query.Update(id, requestModel);
+            var model = _mapper.Map<ProductModel>(item);
+            return model;
+        }
 
+        [HttpDelete("{id}")]
+        public async Task Delete(int id)
+        {
+            await _query.Delete(id);
+        }
     }
 
     //public class ProductsController : ControllerBase

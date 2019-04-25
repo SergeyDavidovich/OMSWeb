@@ -9,13 +9,16 @@ namespace OMSWeb.Api.Models.Products
     public class CreateProductModel
     {
         [Required]
-        [Range(1, 40)]
+        [MinLength(3)]
+        [MaxLength(40)]
         public string ProductName { get; set; }
 
         public int? SupplierId { get; set; }
         public int? CategoryId { get; set; }
 
-        [Range(1,20)]
+        [MinLength(0)]
+        [MaxLength(40)]
+        [DefaultValue("1 штука")]
         public string QuantityPerUnit { get; set; }
 
         public decimal? UnitPrice { get; set; }
@@ -23,7 +26,8 @@ namespace OMSWeb.Api.Models.Products
         public short? UnitsOnOrder { get; set; }
         public short? ReorderLevel { get; set; }
 
-        [Required][DefaultValue(false)]
+        [Required]
+        [DefaultValue(false)]
         public bool Discontinued { get; set; }
     }
 }

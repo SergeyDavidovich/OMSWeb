@@ -16,11 +16,11 @@ namespace OMSWeb.IoC
     {
         public static void Setup(IServiceCollection services, IConfiguration configuration)
         {
-            AddUow(services,configuration);
+            AddUow(services, configuration);
             AddQueries(services);
             ConfigureAutoMapper(services);
         }
-        private static void AddUow(IServiceCollection services,IConfiguration configuration)
+        private static void AddUow(IServiceCollection services, IConfiguration configuration)
         {
             string connection = configuration.GetConnectionString("OMSDatabase");
             services.AddDbContext<NorthwindContext>(options => options.UseSqlServer(connection));

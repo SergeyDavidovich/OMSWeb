@@ -22,7 +22,8 @@ namespace OMSWeb.Data.Access.DAL
 
         public IQueryable<T> Query<T>() where T : class
         {
-            return _context.Set<T>();
+            var set = _context.Set<T>();
+            return set;
         }
 
         public void Add<T>(T obj) where T : class

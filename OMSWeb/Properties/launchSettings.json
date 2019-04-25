@@ -2,8 +2,12 @@
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "http://localhost/OMSWeb",
+      "sslPort": 0
+    },
     "iisExpress": {
-      "applicationUrl": "http://localhost:51127",
+      "applicationUrl": "http://localhost:52127/",
       "sslPort": 0
     }
   },
@@ -11,7 +15,6 @@
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
-      "workingDirectory": "http://localhost:51127",
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
@@ -21,7 +24,7 @@
     "OMSWebService": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/values",
+      "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
