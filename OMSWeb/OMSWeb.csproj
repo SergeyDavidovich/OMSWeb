@@ -6,12 +6,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="App_Data\**" />
     <Compile Remove="Data\**" />
     <Compile Remove="Model\**" />
+    <Content Remove="App_Data\**" />
     <Content Remove="Data\**" />
     <Content Remove="Model\**" />
+    <EmbeddedResource Remove="App_Data\**" />
     <EmbeddedResource Remove="Data\**" />
     <EmbeddedResource Remove="Model\**" />
+    <None Remove="App_Data\**" />
     <None Remove="Data\**" />
     <None Remove="Model\**" />
   </ItemGroup>
@@ -23,10 +27,6 @@
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.3" />
     <PackageReference Include="NSwag.AspNetCore" Version="12.0.18" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="App_Data\" />
   </ItemGroup>
 
   <ItemGroup>
