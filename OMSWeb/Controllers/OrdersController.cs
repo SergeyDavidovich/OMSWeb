@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
 using Microsoft.EntityFrameworkCore;
@@ -10,68 +11,72 @@ using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using OMSWeb.Data.Access.DAL;
 using OMSWeb.Data.Model;
+using OMSWeb.Queries.Queries;
 
 namespace OMSWeb.Controllers
 {
-    //[Route("api/[controller]")]
-    //[ApiController]
-    //public class OrdersController : ControllerBase
-    //{
-    //    private readonly NorthwindContext _context;
+    [Route("api/[controller]")]
+    [ApiController]
+    public class OrdersController : ControllerBase
+    {
+        private readonly IOrdersQueryProcessor _query;
+        private readonly IMapper _mapper;
 
-    //    public OrdersController(NorthwindContext context)
-    //    {
-    //        _context = context;
-    //    }
+        public OrdersController(IOrdersQueryProcessor query, IMapper mapper)
+        {
+            _query = query;
+        }
 
-    //    // GET: api/orders?include_details=true
-    //    [HttpGet]
-    //    public async Task<ActionResult<IEnumerable<Orders>>> GetOrders(bool include_details = false)
-    //    {
-    //        List<Orders> orders;
+        //GET: api/orders?include = true/false
+       [HttpGet]
+        public ActionResult<IEnumerable<Order>> GetOrders(bool include = false)
+        {
+            if (include)
+            {
+                var orders = _query.Get().Include(o => o.OrderDetails);
+                return orders.ToList();
+            }
+            else
+            {
+                var orders = _query.Get();
+                return orders.ToList();
+            }
+        }
 
-    //        if (include_details)
-    //            orders = await _context.Orders.Include(o => o.OrderDetails).ToListAsync();
-    //        else
-    //            orders = await _context.Orders.ToListAsync();
+        // GET: api/orders/5?include = true/false
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Order>> GetOrder(int id, bool include_details = false)
+        {
+            var orders = include_details ?
+                await _query.Get().Include(o => o.OrderDetails).ToListAsync<Order>() : await _query.Get().ToListAsync<Order>();
 
-    //        return orders;
-    //    }
+            var order = orders.Where(o => o.OrderId == id).FirstOrDefault();
 
-    //    // GET: api/orders/5
-    //    [HttpGet("{id}")]
-    //    public async Task<ActionResult<Orders>> GetOrder(int id, bool include_details = false)
-    //    {
-    //        var orders = include_details ?
-    //            await _context.Orders.Include(o => o.OrderDetails).ToListAsync<Orders>() : await _context.Orders.ToListAsync<Orders>();
+            if (order == null)
+            {
+                return NotFound();
+            }
+            return order;
+        }
 
-    //        var order = orders.Where(o => o.OrderId == id).FirstOrDefault();
+        //    // POST: api/products
+        //    [HttpPost]
+        //    public async Task<ActionResult<Orders>> PostProduct(Orders order)
+        //    {
+        //        _context.Orders.Add(order);
 
-    //        if (order == null)
-    //        {
-    //            return NotFound();
-    //        }
-    //        return order;
-    //    }
+        //        await _context.SaveChangesAsync();
 
-    //    // POST: api/products
-    //    [HttpPost]
-    //    public async Task<ActionResult<Orders>> PostProduct(Orders order)
-    //    {
-    //        _context.Orders.Add(order);
+        //        return CreatedAtAction(nameof(GetOrder),
+        //            new
+        //            {
+        //                id = order.OrderId,
+        //                orderDate = order.OrderDate
+        //            },
+        //            order);
+        //    }
 
-    //        await _context.SaveChangesAsync();
-
-    //        return CreatedAtAction(nameof(GetOrder),
-    //            new
-    //            {
-    //                id = order.OrderId,
-    //                orderDate = order.OrderDate
-    //            },
-    //            order);
-    //    }
-
-    //}
+    }
 }
 
 

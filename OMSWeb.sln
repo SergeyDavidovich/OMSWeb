@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OMSWeb.Security", "OMSWeb.S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OMSWeb", "OMSWeb\OMSWeb.csproj", "{5C0B51AE-93B4-4B96-91EA-462A370CB0A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OMSWeb.Queries.Tests", "OMSWeb.Queries.Tests\OMSWeb.Queries.Tests.csproj", "{FA292A35-BD71-42E9-893A-9438F1EA92F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OMSWeb.Queries.Tests", "OMSWeb.Queries.Tests\OMSWeb.Queries.Tests.csproj", "{FA292A35-BD71-42E9-893A-9438F1EA92F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

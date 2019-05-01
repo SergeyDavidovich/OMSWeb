@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace OMSWeb.Data.Model.Orders
 {
-    public partial class OrderModel
+    public class OrderModel
     {
         public int OrderId { get; set; }
         public string CustomerId { get; set; }
@@ -19,5 +19,28 @@ namespace OMSWeb.Data.Model.Orders
         public string ShipRegion { get; set; }
         public string ShipPostalCode { get; set; }
         public string ShipCountry { get; set; }
+
+        public virtual ICollection<OrderDetailModel> OrderDetails { get; set; }
+
     }
+    //public partial class OrderDetail
+    //{
+    //    public int OrderId { get; set; }
+    //    public int ProductId { get; set; }
+    //    public decimal UnitPrice { get; set; }
+    //    public short Quantity { get; set; }
+    //    public float Discount { get; set; }
+
+    //    public virtual Order Order { get; set; }
+    //    public virtual Product Product { get; set; }
+    //}
+    public class OrderDetailModel
+    {
+        public int OrderId { get; set; }
+        public int ProductId { get; set; }
+        public decimal UnitPrice { get; set; }
+        public short Quantity { get; set; }
+        public float Discount { get; set; }
+    }
+
 }
