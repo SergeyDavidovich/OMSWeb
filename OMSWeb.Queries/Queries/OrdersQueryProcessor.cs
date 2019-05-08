@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OMSWeb.Api.Models.Orders;
+﻿using OMSWeb.Api.Models.Orders;
 using OMSWeb.Data.Access.DAL;
 using OMSWeb.Data.Model;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace OMSWeb.Queries.Queries
 {
@@ -28,7 +26,7 @@ namespace OMSWeb.Queries.Queries
             throw new NotImplementedException();
         }
 
-        public Task<Product> CreateAsync(CreateOrderModel model)
+        public Task<Product> CreateAsync(CreateOrderDto model)
         {
             throw new NotImplementedException();
         }
@@ -38,13 +36,13 @@ namespace OMSWeb.Queries.Queries
             throw new NotImplementedException();
         }
 
-        public Task<Product> Update(int id, UpdateOrderModel model)
+        public Task<Product> Update(int id, UpdateOrderDto model)
         {
             throw new NotImplementedException();
         }
         private IQueryable<Order> GetQuery()
         {
-            var q = _uow.Query<Order>();
+            var query = _uow.Query<Order>();
 
             //if (!_securityContext.IsAdministrator)
             //{
@@ -52,7 +50,7 @@ namespace OMSWeb.Queries.Queries
             //    q = q.Where(x => x.UserId == userId);
             //}
 
-            return q;
+            return query;
         }
     }
 }

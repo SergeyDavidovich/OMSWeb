@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Microsoft.AspNetCore;
 using OMSWeb.Data.Access.DAL;
 using OMSWeb.IoC;
+using OMSWeb.Filters;
 
 namespace OMSWeb
 {
@@ -36,9 +37,14 @@ namespace OMSWeb
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-
             ContainerSetup.Setup(services,Configuration);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc(options => { options.Filters.Add(new ApiExceptionFilter()); })
+              .AddJsonOptions(o =>
+              {
+                  o.SerializerSettings.DateTimeZoneHandling = DateTimeZoneHandling.Local;
+              });
+            ;
 
             // Register the Swagger services
             services.AddSwaggerDocument(config =>

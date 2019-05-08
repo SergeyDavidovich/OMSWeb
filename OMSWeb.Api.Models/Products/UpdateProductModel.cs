@@ -18,7 +18,7 @@ namespace OMSWeb.Api.Models.Products
 
         [MinLength(0)]
         [MaxLength(40)]
-        [DefaultValue("1 штука")]
+        [DefaultValue("1 pieсe")]
         public string QuantityPerUnit { get; set; }
 
         public decimal? UnitPrice { get; set; }

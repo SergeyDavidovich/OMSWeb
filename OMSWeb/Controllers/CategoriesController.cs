@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using OMSWeb.Api.Models.Categories;
 using OMSWeb.Data.Model;
 using OMSWeb.Queries.Queries;
 using System;
@@ -21,32 +22,33 @@ namespace OMSWeb.Controllers
             _query = query;
             _mapper = mapper;
         }
+
         //GET: api/categories/2
         [HttpGet]
-        public ActionResult<IEnumerable<Category>> GetCategories(bool included)
+        public ActionResult<IEnumerable<CategoryDto>> GetCategories()
         {
-            var result = _query.Get(included);
+            var result = _query.Get();
             var items =
-                _mapper.Map<IEnumerable<Category>, List<Category>>(result);
+                _mapper.Map<IEnumerable<Category>, List<CategoryDto>>(result);
             return items;
         }
+
         //GET: api/categories/5
         [HttpGet("{id}")]
-        public ActionResult<Category> GetCategory(int id, bool include)
+        public ActionResult<CategoryDto> GetCategory(int id)
         {
-            var item = _query.Get(id,include);
-            //var product = _mapper.Map<ProductModel>(item);
-            return item;
+            var item = _query.Get(id);
+            var category = _mapper.Map<Category, CategoryDto>(item);
+            return category;
         }
+
         // POST: api/products
         [HttpPost]
-        public async Task<Category> Post([FromBody]Category requestModel)
+        public async Task<CategoryDto> Post([FromBody]CreateCategoryDto requestModel)
         {
             var item = await _query.CreateAsync(requestModel);
-            //var model = _mapper.Map<Category>(item);
-            return item;
+            var model = _mapper.Map<CategoryDto>(item);
+            return model;
         }
-
-
     }
 }

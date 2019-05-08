@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using OMSWeb.Api.Models.Categories;
+using OMSWeb.Api.Models.Orders;
 
 namespace OMSWeb.MappingProfiles
 {
@@ -12,12 +14,21 @@ namespace OMSWeb.MappingProfiles
     {
         public MappingProfile()
         {
+            // Product
             CreateMap<Product, ProductModel>();
             CreateMap<ProductModel, Product>();
-            
-            
-            //CreateMap<Product, ProductModel>().ForMember("ModelType",
-            //    val => val.MapFrom(c => new String("ProductModel")));
+
+            // Category
+            CreateMap<Category, CategoryDto>();
+            CreateMap<CategoryDto, Category>();
+
+            // Order
+            CreateMap<Order, IndexOrderDto>();
+            CreateMap<IndexOrderDto, Order>();
+
+
+            //CreateMap<Product, ProductModel>().ForMember("namme of added member",
+            //    val => val.MapFrom(c => new String("any strting or string operation")));
         }
     }
 }

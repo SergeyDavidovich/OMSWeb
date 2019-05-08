@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using OMSWeb.Api.Models.Categories;
 using OMSWeb.Data.Access.DAL;
 using OMSWeb.Data.Model;
 
@@ -18,36 +19,25 @@ namespace OMSWeb.Queries.Queries
             _uow = uow;
         }
 
-        public IQueryable<Category> Get(bool include)
+        public IQueryable<Category> Get()
         {
-            var query = GetQuery(include);
+            var query = GetQuery();
             return query;
         }
 
-        public Category Get(int id, bool include)
+        public Category Get(int id)
         {
-            var query = GetQuery(include).FirstOrDefault(c => c.CategoryId == id);
+            var query = GetQuery().FirstOrDefault(c => c.CategoryId == id);
 
             return query;
         }
 
-        private IQueryable<Category> GetQuery(bool include)
-        {
-            var query = (include) ? _uow.Query<Category>().Include(e => e.Products) : _uow.Query<Category>();
-
-            //if (!_securityContext.IsAdministrator)
-            //{
-            //    var userId = _securityContext.User.Id;
-            //    q = q.Where(x => x.UserId == userId);
-            //}
-
-            return query;
-        }
-        public async Task<Category> CreateAsync(Category model)
+        public async Task<Category> CreateAsync(CreateCategoryDto dto)
         {
             var item = new Category
             {
-                CategoryName = model.CategoryName,
+                CategoryName = dto.CategoryName,
+                Description = dto.Description,
             };
 
             _uow.Add(item);
@@ -59,6 +49,12 @@ namespace OMSWeb.Queries.Queries
         public Task<Product> Update(int id, Product model)
         {
             throw new NotImplementedException();
+        }
+              
+        private IQueryable<Category> GetQuery()
+        {
+            var query = _uow.Query<Category>();
+            return query;
         }
     }
 }

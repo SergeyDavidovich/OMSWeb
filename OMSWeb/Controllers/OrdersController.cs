@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 //using OMSWeb.Model;
 //using OMSWeb.Data;
 using Newtonsoft.Json;
+using OMSWeb.Api.Models.Orders;
 using OMSWeb.Data.Access.DAL;
 using OMSWeb.Data.Model;
 using OMSWeb.Queries.Queries;
@@ -25,22 +26,18 @@ namespace OMSWeb.Controllers
         public OrdersController(IOrdersQueryProcessor query, IMapper mapper)
         {
             _query = query;
+            _mapper = mapper;
         }
 
-        //GET: api/orders?include = true/false
-       [HttpGet]
-        public ActionResult<IEnumerable<Order>> GetOrders(bool include = false)
+        //GET: api/orders
+        [HttpGet]
+        public ActionResult<IEnumerable<IndexOrderDto>> GetOrders()
         {
-            if (include)
-            {
-                var orders = _query.Get().Include(o => o.OrderDetails);
-                return orders.ToList();
-            }
-            else
-            {
-                var orders = _query.Get();
-                return orders.ToList();
-            }
+            var orders = _query.Get();
+            var items =
+                _mapper.Map<IEnumerable<Order>, List<IndexOrderDto>>(orders);
+
+            return items;
         }
 
         // GET: api/orders/5?include = true/false

@@ -9,8 +9,7 @@ namespace OMSWeb.Api.Models.Products
     public class CreateProductModel
     {
         [Required]
-        [MinLength(3)]
-        [MaxLength(40)]
+        [StringLength(40)]
         public string ProductName { get; set; }
 
         public int? SupplierId { get; set; }

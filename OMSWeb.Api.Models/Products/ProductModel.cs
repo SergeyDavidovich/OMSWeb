@@ -15,7 +15,5 @@ namespace OMSWeb.Api.Models.Products
         public short? UnitsOnOrder { get; set; }
         public short? ReorderLevel { get; set; }
         //public bool Discontinued { get; set; }
-
-        public string ModelType { get; set; }
     }
 }

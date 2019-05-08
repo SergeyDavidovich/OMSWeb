@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using OMSWeb.Api.Models.Products;
-
 //using Microsoft.EntityFrameworkCore;
 //using OMSWeb.Model;
 //using OMSWeb.Data;
@@ -59,7 +58,7 @@ namespace OMSWeb.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ProductModel> Put(int id, [FromBody]UpdateProductModel requestModel)
+        public async Task<ActionResult<ProductModel>> Put(int id, [FromBody]UpdateProductModel requestModel)
         {
             var item = await _query.Update(id, requestModel);
             var model = _mapper.Map<ProductModel>(item);
