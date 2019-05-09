@@ -23,7 +23,7 @@ namespace OMSWeb.Controllers
             _mapper = mapper;
         }
 
-        //GET: api/categories/2
+        //GET: api/customers/2
         [HttpGet]
         public ActionResult<IEnumerable<IndexCustomerDto>> GetCustomers()
         {

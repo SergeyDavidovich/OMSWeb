@@ -8,6 +8,7 @@ using AutoMapper;
 using OMSWeb.Api.Models.Categories;
 using OMSWeb.Api.Models.Orders;
 using OMSWeb.Api.Models.Customers;
+using OMSWeb.Api.Models.Employees;
 
 
 namespace OMSWeb.MappingProfiles
@@ -31,6 +32,11 @@ namespace OMSWeb.MappingProfiles
             // Customer
             CreateMap<Customer, IndexCustomerDto>();
             CreateMap<IndexCustomerDto, Customer>();
+
+            // Employees
+            CreateMap<Employee, IndexEmployeeDto>();
+            CreateMap<IndexOrderDto, Employee>();
+
 
             //CreateMap<Product, ProductModel>().ForMember("namme of added member",
             //    val => val.MapFrom(c => new String("any strting or string operation")));
