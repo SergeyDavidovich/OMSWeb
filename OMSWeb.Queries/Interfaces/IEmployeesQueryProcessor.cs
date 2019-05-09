@@ -9,6 +9,5 @@ namespace OMSWeb.Queries.Interfaces
     {
         System.Linq.IQueryable<Employee> Get();
         Employee Get(int id);
-
     }
 }

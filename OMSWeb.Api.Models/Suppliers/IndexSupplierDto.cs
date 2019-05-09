@@ -4,7 +4,7 @@ using System.Text;
 
 namespace OMSWeb.Api.Models.Suppliers
 {
-    public class IndexSuppliersDto
+    public class IndexSupplierDto
     {
         public int SupplierId { get; set; }
         public string CompanyName { get; set; }

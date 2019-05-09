@@ -5,31 +5,32 @@ using System.Linq;
 using System.Threading.Tasks;
 using OMSWeb.Queries.Interfaces;
 using AutoMapper;
-using OMSWeb.Api.Models.Employees;
+using OMSWeb.Api.Models.Suppliers;
 using OMSWeb.Data.Model;
+
 
 namespace OMSWeb.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EmployeesController : ControllerBase
+    public class SuppliersController : ControllerBase
     {
-        private readonly IEmployeesQueryProcessor _query;
+        private readonly ISuppliersQueryProcessor _query;
         private readonly IMapper _mapper;
 
-        public EmployeesController(IEmployeesQueryProcessor query, IMapper mapper)
+        public SuppliersController(ISuppliersQueryProcessor query, IMapper mapper)
         {
             _query = query;
             _mapper = mapper;
         }
 
-        //GET: api/employees/
+        //GET: api/suppliers/
         [HttpGet]
-        public ActionResult<IEnumerable<IndexEmployeeDto>> GetEmployees()
+        public ActionResult<IEnumerable<IndexSupplierDto>> GetEmployees()
         {
             var result = _query.Get();
             var items =
-                _mapper.Map<IEnumerable<Employee>, List<IndexEmployeeDto>>(result);
+                _mapper.Map<IEnumerable<Supplier>, List<IndexSupplierDto>>(result);
             return items;
         }
     }
