@@ -10,6 +10,7 @@ using OMSWeb.Api.Models.Orders;
 using OMSWeb.Api.Models.Customers;
 using OMSWeb.Api.Models.Employees;
 using OMSWeb.Api.Models.Suppliers;
+using OMSWeb.Api.Models.Shippers;
 
 
 namespace OMSWeb.MappingProfiles
@@ -42,6 +43,9 @@ namespace OMSWeb.MappingProfiles
             CreateMap<Supplier, IndexSupplierDto>();
             CreateMap<IndexSupplierDto, Supplier>();
 
+            // Shippers
+            CreateMap<Shipper, IndexShipperDto>();
+            CreateMap<IndexShipperDto, Shipper>();
 
             //CreateMap<Product, ProductModel>().ForMember("namme of added member",
             //    val => val.MapFrom(c => new String("any strting or string operation")));
