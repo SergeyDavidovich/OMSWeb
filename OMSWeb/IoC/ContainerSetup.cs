@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 using OMSWeb.Data.Access.DAL;
 using OMSWeb.Queries.Queries;
+using OMSWeb.Queries.Interfaces;
 using AutoMapper;
 
 namespace OMSWeb.IoC
@@ -33,6 +34,7 @@ namespace OMSWeb.IoC
             services.AddScoped<IProductsQueryProcessor, ProductsQueryProcessor>();
             services.AddScoped<IOrdersQueryProcessor, OrdersQueryProcessor>();
             services.AddScoped<ICategoriesQueryProcessor, CategoriesQueryProcessor>();
+            services.AddScoped<ICustomersQueryProcessor, CustomersQueryProcessor>();
         }
 
         private static void ConfigureAutoMapper(IServiceCollection services)

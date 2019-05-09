@@ -42,7 +42,6 @@ namespace OMSWeb.Filters
                 context.HttpContext.Response.StatusCode = (int)HttpStatusCode.Forbidden;
             }
 
-
             base.OnException(context);
         }
     }
