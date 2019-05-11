@@ -11,9 +11,9 @@ namespace OMSWeb.Queries.Queries
     public interface IOrdersQueryProcessor
     {
         IQueryable<Order> Get();
-        Product Get(int id);
-        Task<Product> CreateAsync(CreateOrderDto model);
-        Task<Product> Update(int id, UpdateOrderDto model);
-        Task Delete(int id);
+        Order Get(int id);
+        //Task<Order> CreateAsync(CreateOrderDto model);
+        //Task<Product> Update(int id, UpdateOrderDto model);
+        //Task Delete(int id);
     }
 }

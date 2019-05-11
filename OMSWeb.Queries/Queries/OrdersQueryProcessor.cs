@@ -4,6 +4,8 @@ using OMSWeb.Data.Model;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 namespace OMSWeb.Queries.Queries
 {
@@ -17,29 +19,34 @@ namespace OMSWeb.Queries.Queries
         }
         public IQueryable<Order> Get()
         {
-            var query = GetQuery();
+            var query = GetQuery()
+                .Include(o => o.Employee)
+                .Include(o => o.Customer);
+            return query;
+        }
+        public Order Get(int id)
+        {
+            var query = GetQuery()
+                .Include(o => o.OrderDetails)
+                .FirstOrDefault(o => o.OrderId == id);
             return query;
         }
 
-        public Product Get(int id)
-        {
-            throw new NotImplementedException();
-        }
+        //public Task<Order> CreateAsync(CreateOrderDto model)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public Task<Product> CreateAsync(CreateOrderDto model)
-        {
-            throw new NotImplementedException();
-        }
+        //public Task Delete(int id)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public Task Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
+        //public Task<Product> Update(int id, UpdateOrderDto model)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public Task<Product> Update(int id, UpdateOrderDto model)
-        {
-            throw new NotImplementedException();
-        }
         private IQueryable<Order> GetQuery()
         {
             var query = _uow.Query<Order>();

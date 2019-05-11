@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-
 using Microsoft.EntityFrameworkCore;
 //using OMSWeb.Model;
 //using OMSWeb.Data;
-using Newtonsoft.Json;
 using OMSWeb.Api.Models.Orders;
-using OMSWeb.Data.Access.DAL;
 using OMSWeb.Data.Model;
 using OMSWeb.Queries.Queries;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace OMSWeb.Controllers
 {
@@ -36,24 +32,22 @@ namespace OMSWeb.Controllers
             var orders = _query.Get();
             var items =
                 _mapper.Map<IEnumerable<Order>, List<IndexOrderDto>>(orders);
-
             return items;
         }
 
         // GET: api/orders/5?include = true/false
         [HttpGet("{id}")]
-        public async Task<ActionResult<Order>> GetOrder(int id, bool include_details = false)
+        public ActionResult<OrderDto> GetOrder(int id)
         {
-            var orders = include_details ?
-                await _query.Get().Include(o => o.OrderDetails).ToListAsync<Order>() : await _query.Get().ToListAsync<Order>();
+            var orders = _query.Get(id);
 
-            var order = orders.Where(o => o.OrderId == id).FirstOrDefault();
+            var item = _mapper.Map<Order, OrderDto>(orders);
 
-            if (order == null)
+            if (item == null)
             {
                 return NotFound();
             }
-            return order;
+            return item;
         }
 
         //    // POST: api/products

@@ -2,10 +2,11 @@
 using System;
 using System.Collections.Generic;
 
-namespace OMSWeb.Data.Model.Orders
+namespace OMSWeb.Api.Models.Orders
 {
     public class OrderDto
     {
+        public int OrderId { get; set; }
         public string CustomerId { get; set; }
         public int? EmployeeId { get; set; }
         public DateTime? OrderDate { get; set; }
