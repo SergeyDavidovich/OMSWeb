@@ -31,7 +31,6 @@ namespace OMSWeb.Queries.Queries
                 .Include(o => o.Customer)
                 .Include(o => o.OrderDetails)
                 .FirstOrDefault(o => o.OrderId == id);
-
             return query;
         }
 

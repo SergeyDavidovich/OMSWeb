@@ -1,4 +1,5 @@
-﻿using OMSWeb.Api.Models.Orders;
+﻿using OMSWeb.Api.Models.OrderDetails;
+using OMSWeb.Api.Models.Orders;
 using System;
 using System.Collections.Generic;
 

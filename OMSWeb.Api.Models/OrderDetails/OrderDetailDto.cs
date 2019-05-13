@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace OMSWeb.Api.Models.Orders
+namespace OMSWeb.Api.Models.OrderDetails
 {
     public class OrderDetailDto
     {
