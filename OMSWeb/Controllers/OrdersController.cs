@@ -35,7 +35,7 @@ namespace OMSWeb.Controllers
             return items;
         }
 
-        // GET: api/orders/5?include = true/false
+        // GET: api/orders/id
         [HttpGet("{id}")]
         public ActionResult<OrderDto> GetOrder(int id)
         {
@@ -50,6 +50,20 @@ namespace OMSWeb.Controllers
             return item;
         }
 
+        // GET: api/invoices/id
+        [HttpGet("Invoices/{id}")]
+        public ActionResult<OrderInvoiceDto> GetInvoice(int id)
+        {
+            var orders = _query.Get(id);
+
+            var item = _mapper.Map<Order, OrderInvoiceDto>(orders);
+
+            if (item == null)
+            {
+                return NotFound();
+            }
+            return item;
+        }
         //    // POST: api/products
         //    [HttpPost]
         //    public async Task<ActionResult<Orders>> PostProduct(Orders order)

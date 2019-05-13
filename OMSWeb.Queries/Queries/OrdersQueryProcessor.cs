@@ -27,25 +27,37 @@ namespace OMSWeb.Queries.Queries
         public Order Get(int id)
         {
             var query = GetQuery()
+                .Include(o => o.Employee)
+                .Include(o => o.Customer)
                 .Include(o => o.OrderDetails)
                 .FirstOrDefault(o => o.OrderId == id);
+
             return query;
         }
 
-        //public Task<Order> CreateAsync(CreateOrderDto model)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public async Task<Order> CreateAsync(CreateOrderDto model)
+        {
+            var item = new Order
+            {
+                CustomerId = model.CustomerId,
+                EmployeeId = model.EmployeeId,
 
-        //public Task Delete(int id)
-        //{
-        //    throw new NotImplementedException();
-        //}
+                OrderDetails = new List<OrderDetail>(model.OrderDetails),
+            };
+            _uow.Add(item);
+            await _uow.CommitAsync();
+            return item;
+        }
 
-        //public Task<Product> Update(int id, UpdateOrderDto model)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public Task Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Product> Update(int id, UpdateOrderDto model)
+        {
+            throw new NotImplementedException();
+        }
 
         private IQueryable<Order> GetQuery()
         {

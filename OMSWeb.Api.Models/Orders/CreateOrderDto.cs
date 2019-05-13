@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
+using OMSWeb.Data.Model;
 
 namespace OMSWeb.Api.Models.Orders
 {
@@ -26,7 +27,7 @@ namespace OMSWeb.Api.Models.Orders
         [StringLength(10)] public string ShipPostalCode { get; set; }
         [StringLength(15)] public string ShipCountry { get; set; }
 
-        public virtual ICollection<OrderDetailDto> OrderDetails { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }
 

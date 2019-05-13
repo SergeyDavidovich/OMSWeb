@@ -12,7 +12,7 @@ namespace OMSWeb.Queries.Queries
     {
         IQueryable<Order> Get();
         Order Get(int id);
-        //Task<Order> CreateAsync(CreateOrderDto model);
+        Task<Order> CreateAsync(CreateOrderDto model);
         //Task<Product> Update(int id, UpdateOrderDto model);
         //Task Delete(int id);
     }
