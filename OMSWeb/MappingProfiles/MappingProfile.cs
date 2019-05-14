@@ -20,8 +20,8 @@ namespace OMSWeb.MappingProfiles
         public MappingProfile()
         {
             // Product
-            CreateMap<Product, ProductModel>();
-            CreateMap<ProductModel, Product>();
+            CreateMap<Product, ProductDto>();
+            CreateMap<ProductDto, Product>();
 
             // Category
             CreateMap<Category, CategoryDto>();
@@ -29,11 +29,6 @@ namespace OMSWeb.MappingProfiles
 
             // Order
             CreateMap<Order, IndexOrderDto>();
-                // .ForMember(
-                //dest => dest.CompanyName, val => val.MapFrom(src => src.Customer.CompanyName))
-                // .ForMember(dest => dest.EmployeeName,
-                // val => val.MapFrom(src => src.Employee.FirstName + " " + src.Employee.LastName));
-
             CreateMap<IndexOrderDto, Order>();
             CreateMap<Order, OrderDto>();
             CreateMap<Order, OrderInvoiceDto>()
@@ -42,6 +37,7 @@ namespace OMSWeb.MappingProfiles
                       src => src.Employee.FirstName + " " + src.Employee.LastName))
                   .ForMember(
                 dest => dest.CompanyName, val => val.MapFrom(src => src.Customer.CompanyName));
+
 
             // Customer
             CreateMap<Customer, IndexCustomerDto>();

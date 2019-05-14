@@ -6,7 +6,7 @@ using System.ComponentModel;
 
 namespace OMSWeb.Api.Models.Products
 {
-    public class CreateProductModel
+    public class CreateProductDto
     {
         [Required]
         [StringLength(40)]

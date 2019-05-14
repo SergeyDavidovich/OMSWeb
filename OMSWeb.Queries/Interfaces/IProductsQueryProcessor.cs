@@ -12,8 +12,8 @@ namespace OMSWeb.Queries.Queries
     {
         IQueryable<Product> Get();
         Product Get(int id);
-        Task<Product> CreateAsync(CreateProductModel model);
-        Task<Product> Update(int id, UpdateProductModel model);
+        Task<Product> CreateAsync(CreateProductDto model);
+        Task<Product> Update(int id, UpdateProductDto model);
         Task Delete(int id);
     }
 }

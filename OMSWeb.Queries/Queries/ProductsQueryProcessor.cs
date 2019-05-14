@@ -28,7 +28,7 @@ namespace OMSWeb.Queries.Queries
             return item;
         }
 
-        public async Task<Product> CreateAsync(CreateProductModel model)
+        public async Task<Product> CreateAsync(CreateProductDto model)
         {
             var item = new Product
             {
@@ -44,7 +44,7 @@ namespace OMSWeb.Queries.Queries
             await _uow.CommitAsync();
             return item;
         }
-        public async Task<Product> Update(int id, UpdateProductModel model)
+        public async Task<Product> Update(int id, UpdateProductDto model)
         {
             var item = GetQuery().FirstOrDefault(x => x.ProductId == id);
 

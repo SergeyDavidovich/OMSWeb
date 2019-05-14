@@ -64,23 +64,14 @@ namespace OMSWeb.Controllers
             }
             return item;
         }
-        //    // POST: api/products
-        //    [HttpPost]
-        //    public async Task<ActionResult<Orders>> PostProduct(Orders order)
-        //    {
-        //        _context.Orders.Add(order);
-
-        //        await _context.SaveChangesAsync();
-
-        //        return CreatedAtAction(nameof(GetOrder),
-        //            new
-        //            {
-        //                id = order.OrderId,
-        //                orderDate = order.OrderDate
-        //            },
-        //            order);
-        //    }
-
+        // POST: api/products
+        [HttpPost]
+        public async Task<ActionResult<OrderDto>> PostProduct(CreateOrderDto requestModel)
+        {
+            var item = await _query.CreateAsync(requestModel);
+            var model = _mapper.Map<OrderDto>(item);
+            return model;
+        }
     }
 }
 

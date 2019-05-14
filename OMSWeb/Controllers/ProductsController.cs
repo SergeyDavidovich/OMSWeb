@@ -32,36 +32,36 @@ namespace OMSWeb.Controllers
 
         //GET: api/products
         [HttpGet]
-        public ActionResult<IEnumerable<ProductModel>> GetProducts()
+        public ActionResult<IEnumerable<ProductDto>> GetProducts()
         {
             var result = _query.Get();
             var items =
-                _mapper.Map<IEnumerable<Product>, List<ProductModel>>(result);
+                _mapper.Map<IEnumerable<Product>, List<ProductDto>>(result);
             return items;
         }
 
         //GET: api/product/5
         [HttpGet("{id}")]
-        public ActionResult<ProductModel> GetProduct(int id)
+        public ActionResult<ProductDto> GetProduct(int id)
         {
             var item = _query.Get(id);
-            var product = _mapper.Map<ProductModel>(item);
+            var product = _mapper.Map<ProductDto>(item);
             return product;
         }
         // POST: api/products
         [HttpPost]
-        public async Task<ProductModel> Post([FromBody]CreateProductModel requestModel)
+        public async Task<ProductDto> Post([FromBody]CreateProductDto requestModel)
         {
             var item = await _query.CreateAsync(requestModel);
-            var model = _mapper.Map<ProductModel>(item);
+            var model = _mapper.Map<ProductDto>(item);
             return model;
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<ProductModel>> Put(int id, [FromBody]UpdateProductModel requestModel)
+        public async Task<ActionResult<ProductDto>> Put(int id, [FromBody]UpdateProductDto requestModel)
         {
             var item = await _query.Update(id, requestModel);
-            var model = _mapper.Map<ProductModel>(item);
+            var model = _mapper.Map<ProductDto>(item);
             return model;
         }
 
@@ -71,81 +71,4 @@ namespace OMSWeb.Controllers
             await _query.Delete(id);
         }
     }
-
-    //public class ProductsController : ControllerBase
-    //{
-    //    private readonly NorthwindContext _context;
-
-    //    public ProductsController(NorthwindContext context)
-    //    {
-    //        _context = context;
-    //    }
-
-    //    // GET: api/products
-    //    [HttpGet]
-    //    public async Task<ActionResult<IEnumerable<Products>>> GetProducts()
-    //    {
-    //        return await _context.Query<Products>().ToListAsync();
-    //    }
-
-    //    //GET: api/product/5
-    //    [HttpGet("{id}")]
-    //    public async Task<ActionResult<Products>> GetProduct(int id)
-    //    {
-    //        var product = await _context.Products.FindAsync(id);
-    //        if (product == null)
-    //        {
-    //            return NotFound();
-    //        }
-    //        return product;
-    //    }
-
-    //    // POST: api/products
-    //    [HttpPost]
-    //    public async Task<ActionResult<Products>> PostProduct(Products item)
-    //    {
-    //        _context.Products.Add(item);
-    //        await _context.SaveChangesAsync();
-
-    //        return CreatedAtAction(nameof(GetProduct),
-    //            new
-    //            {
-    //                id = item.ProductId,
-    //                ProductName = item.ProductName
-    //            },
-    //            item);
-    //    }
-
-    //    // PUT: api/products/5
-    //    [HttpPut("{id}")]
-    //    public async Task<IActionResult> PutProduct(int id, Products item)
-    //    {
-    //        if (id != item.ProductId)
-    //        {
-    //            return BadRequest();
-    //        }
-
-    //        _context.Entry(item).State = EntityState.Modified;
-    //        await _context.SaveChangesAsync();
-
-    //        return NoContent();
-    //    }
-
-    //    // DELETE: api/products/5
-    //    [HttpDelete("{id}")]
-    //    public async Task<IActionResult> DeleteProduct(int id)
-    //    {
-    //        var todoItem = await _context.Products.FindAsync(id);
-
-    //        if (todoItem == null)
-    //        {
-    //            return NotFound();
-    //        }
-
-    //        _context.Products.Remove(todoItem);
-    //        await _context.SaveChangesAsync();
-
-    //        return NoContent();
-    //    }
-    //}
 }
