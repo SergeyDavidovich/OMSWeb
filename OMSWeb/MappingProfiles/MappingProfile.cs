@@ -31,7 +31,9 @@ namespace OMSWeb.MappingProfiles
             // Order
             CreateMap<Order, IndexOrderDto>();
             CreateMap<IndexOrderDto, Order>();
-            CreateMap<Order, OrderDto>();
+
+            CreateMap<Order, OrderDto>().ForMember(src => src.OrderDetailsDto, val => val.MapFrom(src => src.OrderDetails));
+
             CreateMap<Order, OrderInvoiceDto>()
                   .ForMember(dest => dest.EmployeeName,
                   val => val.MapFrom(

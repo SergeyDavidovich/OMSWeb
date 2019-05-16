@@ -69,7 +69,9 @@ namespace OMSWeb.Controllers
         public async Task<ActionResult<OrderDto>> Post(CreateOrderDto requestModel)
         {
             var item = await _query.CreateAsync(requestModel);
-            var model = _mapper.Map<OrderDto>(item);
+
+            var model = _mapper.Map<Order, OrderDto>(item);
+
             return model;
         }
     }
