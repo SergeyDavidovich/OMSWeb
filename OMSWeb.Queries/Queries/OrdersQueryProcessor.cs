@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace OMSWeb.Queries.Queries
 {
@@ -33,20 +34,32 @@ namespace OMSWeb.Queries.Queries
                 .FirstOrDefault(o => o.OrderId == id);
             return query;
         }
-
         public async Task<Order> CreateAsync(CreateOrderDto model)
         {
-            var item = new Order
+            var order = new Order
             {
                 CustomerId = model.CustomerId,
-                EmployeeId = model.EmployeeId,
-
-                OrderDetails = new List<OrderDetail>(model.OrderDetails),
+                EmployeeId = model.EmployeeId
             };
-            _uow.Add(item);
+
+            var details = model.OrderDetailDto.
+                Select(d => new OrderDetail()
+                {
+                    OrderId = d.OrderId,
+                    ProductId = d.ProductId,
+                    UnitPrice = d.UnitPrice,
+                    Quantity = d.Quantity,
+                    Discount = d.Discount
+                });
+
+            order.OrderDetails = details.ToList<OrderDetail>();
+
+            _uow.Add(order);
             await _uow.CommitAsync();
-            return item;
+
+            return order;
         }
+
 
         public Task Delete(int id)
         {

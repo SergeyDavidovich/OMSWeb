@@ -37,7 +37,7 @@ namespace OMSWeb
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            ContainerSetup.Setup(services,Configuration);
+            ContainerSetup.Setup(services, Configuration);
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddMvc(options => { options.Filters.Add(new ApiExceptionFilter()); })
               .AddJsonOptions(o =>
@@ -72,7 +72,8 @@ namespace OMSWeb
             });
 
 
-            services.AddMvc().AddJsonOptions(options => {
+            services.AddMvc().AddJsonOptions(options =>
+            {
                 options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             });
         }

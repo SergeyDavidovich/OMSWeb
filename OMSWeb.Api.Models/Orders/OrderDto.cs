@@ -22,6 +22,6 @@ namespace OMSWeb.Api.Models.Orders
         public string ShipPostalCode { get; set; }
         public string ShipCountry { get; set; }
 
-        public ICollection<OrderDetailDto> OrderDetails { get; set; }
+        public ICollection<OrderDetailDto> OrderDetailsDto { get; set; }
     }
 }

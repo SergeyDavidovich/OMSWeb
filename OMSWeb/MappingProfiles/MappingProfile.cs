@@ -11,6 +11,7 @@ using OMSWeb.Api.Models.Customers;
 using OMSWeb.Api.Models.Employees;
 using OMSWeb.Api.Models.Suppliers;
 using OMSWeb.Api.Models.Shippers;
+using OMSWeb.Api.Models.OrderDetails;
 
 
 namespace OMSWeb.MappingProfiles
@@ -35,8 +36,12 @@ namespace OMSWeb.MappingProfiles
                   .ForMember(dest => dest.EmployeeName,
                   val => val.MapFrom(
                       src => src.Employee.FirstName + " " + src.Employee.LastName))
-                  .ForMember(
-                dest => dest.CompanyName, val => val.MapFrom(src => src.Customer.CompanyName));
+                  .ForMember(dest => dest.CompanyName,
+                  val => val.MapFrom(src => src.Customer.CompanyName));
+
+            // OrderDetail
+            CreateMap<OrderDetail, OrderDetailDto>();
+            CreateMap<OrderDetailDto, OrderDetail>();
 
 
             // Customer
@@ -55,8 +60,6 @@ namespace OMSWeb.MappingProfiles
             CreateMap<Shipper, IndexShipperDto>();
             CreateMap<IndexShipperDto, Shipper>();
 
-            //CreateMap<Product, ProductModel>().ForMember("namme of added member",
-            //    val => val.MapFrom(c => new String("any strting or string operation")));
         }
     }
 }
