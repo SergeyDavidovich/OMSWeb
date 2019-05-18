@@ -20,4 +20,5 @@ Microsoft SQL Server 2012 Express Edition or higher, and DB Northwind attached
 - *Dependency injection* - `Native ASP.NET Core IOC container` 
 - *Object mapping* - `AutoMapper`
 - *Unit testing* - `xUnit, Moq, FluentAssertions`
+
 ![Screen](https://github.com/StupeniNET/OMSWeb/blob/master/OMSWeb/Screenshots/screen.PNG?raw=true)
