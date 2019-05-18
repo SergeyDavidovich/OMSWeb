@@ -27,7 +27,7 @@ namespace OMSWeb.Queries.Queries
             var item = GetQuery().FirstOrDefault(p => p.ProductId == id);
             if (item == null)
             {
-                throw new NotFoundException("Product is not found");
+                throw new NotFoundException($"Product {id} is not found");
             }
             return item;
         }
@@ -54,7 +54,7 @@ namespace OMSWeb.Queries.Queries
 
             if (item == null)
             {
-                throw new NotFoundException("Product is not found");
+                throw new NotFoundException($"Product {id} is not found");
             }
 
             item.ProductName = model.ProductName;
@@ -73,7 +73,7 @@ namespace OMSWeb.Queries.Queries
 
             if (item == null)
             {
-                throw new NotFoundException("Product is not found");
+                throw new NotFoundException($"Product {id} is not found");
             }
 
             if (item.Discontinued) return;
