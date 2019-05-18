@@ -108,8 +108,8 @@ namespace OMSWeb.Queries.Tests
         [Fact]
         public void GetShouldThrowExceptionIfItemIsNotFoundById()
         {
-            var expense = new Product { ProductId = _random.Next() };
-            _productList.Add(expense);
+            var product = new Product { ProductId = _random.Next() };
+            _productList.Add(product);
 
             Action get = () =>
             {

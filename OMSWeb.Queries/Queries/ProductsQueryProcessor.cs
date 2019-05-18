@@ -25,6 +25,10 @@ namespace OMSWeb.Queries.Queries
         public Product Get(int id)
         {
             var item = GetQuery().FirstOrDefault(p => p.ProductId == id);
+            if (item == null)
+            {
+                throw new NotFoundException("Product is not found");
+            }
             return item;
         }
 
