@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using OMSWeb.Api.Common.Exceptions;
 
 namespace OMSWeb.Queries.Queries
 {
@@ -32,6 +33,11 @@ namespace OMSWeb.Queries.Queries
                 .Include(o => o.Customer)
                 .Include(o => o.OrderDetails)
                 .FirstOrDefault(o => o.OrderId == id);
+
+            if (query==null)
+            {
+                throw new NotFoundException("Order is not found");
+            }
             return query;
         }
         public async Task<Order> CreateAsync(CreateOrderDto model)
@@ -58,17 +64,6 @@ namespace OMSWeb.Queries.Queries
             await _uow.CommitAsync();
 
             return order;
-        }
-
-
-        public Task Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Product> Update(int id, UpdateOrderDto model)
-        {
-            throw new NotImplementedException();
         }
 
         private IQueryable<Order> GetQuery()

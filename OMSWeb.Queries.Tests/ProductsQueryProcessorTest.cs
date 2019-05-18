@@ -136,7 +136,6 @@ namespace OMSWeb.Queries.Tests
             {
                 _query.Delete(_random.Next()).Wait();
             };
-
             execute.Should().Throw<NotFoundException>();
         }
     }
