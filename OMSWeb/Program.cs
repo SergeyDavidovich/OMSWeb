@@ -1,9 +1,16 @@
-﻿//TODO: Delete the line below
-//https://www.toptal.com/asp-dot-net/asp-net-web-api-tutorial
-
-using Microsoft.AspNetCore;
+﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
+
+//TODO: Add Logging
+//TODO: Add CategoriesQueryProcessorTest
+//TODO: Add CustomersQueryProcessorTest
+//TODO: Add EmoloyeesQueryProcessorTest
+//TODO: Add ShippersQueryProcessorTest
+//TODO: Add SuppliersQueryProcessorTest
+//TODO:
+//TODO:
+//TODO:
 
 namespace OMSWeb
 {

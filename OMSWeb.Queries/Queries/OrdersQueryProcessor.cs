@@ -36,7 +36,7 @@ namespace OMSWeb.Queries.Queries
 
             if (query==null)
             {
-                throw new NotFoundException("Order is not found");
+                throw new NotFoundException($"Order {id} is not found");
             }
             return query;
         }
