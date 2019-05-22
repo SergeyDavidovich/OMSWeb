@@ -26,7 +26,7 @@ namespace OMSWeb.Controllers
 
         //GET: api/suppliers/
         [HttpGet]
-        public ActionResult<IEnumerable<IndexSupplierDto>> GetEmployees()
+        public ActionResult<IEnumerable<IndexSupplierDto>> GetSuppliers()
         {
             var result = _query.Get();
             var items =

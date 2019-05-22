@@ -2,15 +2,15 @@
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
 
-//TODO: Add Logging
+//TODO: Implementing Logging
+//TODO: Implementing Cashing
+//TODO: Implementing Authentifikation and Authorisation
+//TODO: Implementing Migrations
 //TODO: Add CategoriesQueryProcessorTest
 //TODO: Add CustomersQueryProcessorTest
 //TODO: Add EmoloyeesQueryProcessorTest
 //TODO: Add ShippersQueryProcessorTest
 //TODO: Add SuppliersQueryProcessorTest
-//TODO:
-//TODO:
-//TODO:
 
 namespace OMSWeb
 {
@@ -20,14 +20,14 @@ namespace OMSWeb
         {
             CreateWebHostBuilder(args).Build().Run();
 
-            //var host = new WebHostBuilder()
-            //    .UseKestrel()
-            //    .UseIISIntegration()
-            //  .UseContentRoot(Directory.GetCurrentDirectory())
-            //  .UseStartup<Startup>()
-            //  .Build();
+            var host = new WebHostBuilder()
+                .UseKestrel()
+                .UseIISIntegration()
+              .UseContentRoot(Directory.GetCurrentDirectory())
+              .UseStartup<Startup>()
+              .Build();
 
-            //host.Run();
+            host.Run();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

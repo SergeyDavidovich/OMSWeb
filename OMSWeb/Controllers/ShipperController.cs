@@ -28,7 +28,7 @@ namespace OMSWeb.Controllers
 
         //GET: api/shippers/
         [HttpGet]
-        public ActionResult<IEnumerable<IndexShipperDto>> GetShipperss()
+        public ActionResult<IEnumerable<IndexShipperDto>> GetShippers()
         {
             var result = _query.Get();
             var items =
