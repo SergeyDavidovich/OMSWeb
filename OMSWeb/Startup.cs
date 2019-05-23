@@ -38,41 +38,20 @@ namespace OMSWeb
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
             services.AddMvc(options => { options.Filters.Add(new ApiExceptionFilter()); })
               .AddJsonOptions(o =>
               {
                   o.SerializerSettings.DateTimeZoneHandling = DateTimeZoneHandling.Local;
               });
             ;
-            services.AddMvc().AddJsonOptions(options =>
-            {
-                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-            });
+            services.AddMvc()
+                .AddJsonOptions(options =>
+                {
+                    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                })
+            ;
 
-            // Register the Swagger services
-            //services.AddSwaggerDocument(config =>
-            //{
-            //    config.PostProcess = document =>
-            //    {
-            //        document.Info.Version = "v1";
-            //        document.Info.Title = "OMS Web API";
-            //        document.Info.Description = "Backend for Order Managment System";
-            //        //document.Info.TermsOfService = "None";
-
-            //        document.Info.Contact = new NSwag.SwaggerContact
-            //        {
-            //            Name = "Stupeni .NET",
-            //            Email = "writesd@hotmail.com",
-            //            Url = "https://github.com/StupeniNET/OMSWebService"
-            //        };
-
-            //        document.Info.License = new NSwag.SwaggerLicense
-            //        {
-            //            Name = "Use under Apache 2.0 Licence",
-            //            Url = "http://www.apache.org/licenses/LICENSE-2.0.html"
-            //        };
-            //    };
-            //});
             ContainerSetup.Setup(services, Configuration);
         }
 
