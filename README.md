@@ -1,6 +1,6 @@
-# OMSWeb Service
+# OMSWeb
 
-ASP.NET Core 2.2 web Api sample
+ASP.NET Core 2.2 Web Api sample
 
 The sample aimed to:
 - to create a REST API from scratch using .NET Core, EF Core, AutoMapper, and XUnit
