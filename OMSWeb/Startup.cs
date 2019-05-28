@@ -43,13 +43,8 @@ namespace OMSWeb
               .AddJsonOptions(o =>
               {
                   o.SerializerSettings.DateTimeZoneHandling = DateTimeZoneHandling.Local;
-              });
-            ;
-            services.AddMvc()
-                .AddJsonOptions(options =>
-                {
-                    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-                })
+                  o.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+              })
             ;
 
             ContainerSetup.Setup(services, Configuration);
