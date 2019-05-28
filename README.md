@@ -1,5 +1,3 @@
-# OMSWeb
-
 ASP.NET Core 2.2 Web Api sample
 
 The sample aimed to:
