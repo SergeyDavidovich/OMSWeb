@@ -1,0 +1,90 @@
+2019-06-04 20:14:13.940 +02:00 [INF] Starting web host
+2019-06-04 20:14:20.523 +02:00 [INF] User profile is available. Using 'C:\Users\write\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-06-04 20:14:26.063 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger  
+2019-06-04 20:14:26.589 +02:00 [INF] Request finished in 536.8305ms 302 
+2019-06-04 20:14:26.622 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/index.html  
+2019-06-04 20:14:26.903 +02:00 [INF] Request finished in 280.8902ms 200 text/html; charset=utf-8
+2019-06-04 20:14:27.036 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui.css  
+2019-06-04 20:14:27.039 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui-bundle.js  
+2019-06-04 20:14:27.070 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js  
+2019-06-04 20:14:27.148 +02:00 [INF] The file /swagger-ui-bundle.js was not modified
+2019-06-04 20:14:27.150 +02:00 [INF] The file /swagger-ui-standalone-preset.js was not modified
+2019-06-04 20:14:27.150 +02:00 [INF] The file /swagger-ui.css was not modified
+2019-06-04 20:14:27.175 +02:00 [INF] Request finished in 135.0443ms 304 application/javascript
+2019-06-04 20:14:27.201 +02:00 [INF] Request finished in 130.7094ms 304 application/javascript
+2019-06-04 20:14:27.203 +02:00 [INF] Request finished in 167.1105ms 304 text/css
+2019-06-04 20:14:28.314 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/v1/swagger.json  
+2019-06-04 20:14:28.823 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/favicon-32x32.png  
+2019-06-04 20:14:28.984 +02:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2019-06-04 20:14:29.403 +02:00 [INF] Request finished in 580.6784ms 200 image/png
+2019-06-04 20:14:32.624 +02:00 [INF] Request finished in 4309.4137ms 200 application/json; charset=utf-8
+2019-06-04 20:15:36.613 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Categories  
+2019-06-04 20:15:36.722 +02:00 [INF] Executing endpoint 'OMSWeb.Controllers.CategoriesController.GetCategories (OMSWeb)'
+2019-06-04 20:15:36.759 +02:00 [INF] Route matched with {action = "GetCategories", controller = "Categories"}. Executing action OMSWeb.Controllers.CategoriesController.GetCategories (OMSWeb)
+2019-06-04 20:15:38.898 +02:00 [INF] Executing action method OMSWeb.Controllers.CategoriesController.GetCategories (OMSWeb) - Validation state: "Valid"
+2019-06-04 20:15:42.189 +02:00 [INF] Entity Framework Core 2.2.4-servicing-10062 initialized 'NorthwindContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-06-04 20:15:44.017 +02:00 [INF] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CategoryID], [c].[CategoryName], [c].[Description], [c].[Picture]
+FROM [Categories] AS [c]
+2019-06-04 20:15:44.369 +02:00 [INF] Executed action method OMSWeb.Controllers.CategoriesController.GetCategories (OMSWeb), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 5436.7919ms.
+2019-06-04 20:15:44.416 +02:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[OMSWeb.Api.Models.Categories.CategoryDto, OMSWeb.Api.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2019-06-04 20:15:44.474 +02:00 [INF] Executed action OMSWeb.Controllers.CategoriesController.GetCategories (OMSWeb) in 7702.0846ms
+2019-06-04 20:15:44.477 +02:00 [INF] Executed endpoint 'OMSWeb.Controllers.CategoriesController.GetCategories (OMSWeb)'
+2019-06-04 20:15:44.503 +02:00 [INF] Request finished in 7895.5939ms 200 application/json; charset=utf-8
+2019-06-04 20:25:29.068 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Products  
+2019-06-04 20:25:29.074 +02:00 [INF] Executing endpoint 'OMSWeb.Controllers.ProductsController.GetProducts (OMSWeb)'
+2019-06-04 20:25:29.081 +02:00 [INF] Route matched with {action = "GetProducts", controller = "Products"}. Executing action OMSWeb.Controllers.ProductsController.GetProducts (OMSWeb)
+2019-06-04 20:25:29.125 +02:00 [INF] Executing action method OMSWeb.Controllers.ProductsController.GetProducts (OMSWeb) - Validation state: "Valid"
+2019-06-04 20:25:29.169 +02:00 [INF] Entity Framework Core 2.2.4-servicing-10062 initialized 'NorthwindContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-06-04 20:25:29.530 +02:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [x].[ProductID], [x].[CategoryID], [x].[Discontinued], [x].[ProductName], [x].[QuantityPerUnit], [x].[ReorderLevel], [x].[SupplierID], [x].[UnitPrice], [x].[UnitsInStock], [x].[UnitsOnOrder]
+FROM [Products] AS [x]
+WHERE [x].[Discontinued] = 0
+2019-06-04 20:25:29.605 +02:00 [INF] Executed action method OMSWeb.Controllers.ProductsController.GetProducts (OMSWeb), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 464.5559ms.
+2019-06-04 20:25:29.612 +02:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[OMSWeb.Api.Models.Products.ProductDto, OMSWeb.Api.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2019-06-04 20:25:29.633 +02:00 [INF] Executed action OMSWeb.Controllers.ProductsController.GetProducts (OMSWeb) in 547.33980000000008ms
+2019-06-04 20:25:29.639 +02:00 [INF] Executed endpoint 'OMSWeb.Controllers.ProductsController.GetProducts (OMSWeb)'
+2019-06-04 20:25:29.643 +02:00 [INF] Request finished in 574.9965ms 200 application/json; charset=utf-8
+2019-06-04 20:26:04.074 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Customers  
+2019-06-04 20:26:04.076 +02:00 [INF] Executing endpoint 'OMSWeb.Controllers.CustomersController.GetCustomers (OMSWeb)'
+2019-06-04 20:26:04.081 +02:00 [INF] Route matched with {action = "GetCustomers", controller = "Customers"}. Executing action OMSWeb.Controllers.CustomersController.GetCustomers (OMSWeb)
+2019-06-04 20:26:04.085 +02:00 [INF] Executing action method OMSWeb.Controllers.CustomersController.GetCustomers (OMSWeb) - Validation state: "Valid"
+2019-06-04 20:26:04.090 +02:00 [INF] Entity Framework Core 2.2.4-servicing-10062 initialized 'NorthwindContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-06-04 20:26:04.152 +02:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerID], [c].[Address], [c].[City], [c].[CompanyName], [c].[ContactName], [c].[ContactTitle], [c].[Country], [c].[Fax], [c].[Phone], [c].[PostalCode], [c].[Region]
+FROM [Customers] AS [c]
+2019-06-04 20:26:04.226 +02:00 [INF] Executed action method OMSWeb.Controllers.CustomersController.GetCustomers (OMSWeb), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 138.6413ms.
+2019-06-04 20:26:04.232 +02:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[OMSWeb.Api.Models.Customers.IndexCustomerDto, OMSWeb.Api.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2019-06-04 20:26:04.250 +02:00 [INF] Executed action OMSWeb.Controllers.CustomersController.GetCustomers (OMSWeb) in 165.8734ms
+2019-06-04 20:26:04.252 +02:00 [INF] Executed endpoint 'OMSWeb.Controllers.CustomersController.GetCustomers (OMSWeb)'
+2019-06-04 20:26:04.255 +02:00 [INF] Request finished in 185.7035ms 200 application/json; charset=utf-8
+2019-06-04 20:26:42.202 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Products/10  
+2019-06-04 20:26:42.204 +02:00 [INF] Executing endpoint 'OMSWeb.Controllers.ProductsController.GetProduct (OMSWeb)'
+2019-06-04 20:26:42.232 +02:00 [INF] Route matched with {action = "GetProduct", controller = "Products"}. Executing action OMSWeb.Controllers.ProductsController.GetProduct (OMSWeb)
+2019-06-04 20:26:42.289 +02:00 [INF] Executing action method OMSWeb.Controllers.ProductsController.GetProduct (OMSWeb) with arguments (["10"]) - Validation state: "Valid"
+2019-06-04 20:26:42.416 +02:00 [INF] Entity Framework Core 2.2.4-servicing-10062 initialized 'NorthwindContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-06-04 20:26:42.651 +02:00 [INF] Executed DbCommand (28ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [x].[ProductID], [x].[CategoryID], [x].[Discontinued], [x].[ProductName], [x].[QuantityPerUnit], [x].[ReorderLevel], [x].[SupplierID], [x].[UnitPrice], [x].[UnitsInStock], [x].[UnitsOnOrder]
+FROM [Products] AS [x]
+WHERE ([x].[Discontinued] = 0) AND ([x].[ProductID] = @__id_0)
+2019-06-04 20:26:42.693 +02:00 [INF] Executed action method OMSWeb.Controllers.ProductsController.GetProduct (OMSWeb), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 379.2918ms.
+2019-06-04 20:26:42.698 +02:00 [INF] Executing ObjectResult, writing value of type 'OMSWeb.Api.Models.Products.ProductDto'.
+2019-06-04 20:26:42.700 +02:00 [INF] Executed action OMSWeb.Controllers.ProductsController.GetProduct (OMSWeb) in 457.9823ms
+2019-06-04 20:26:42.705 +02:00 [INF] Executed endpoint 'OMSWeb.Controllers.ProductsController.GetProduct (OMSWeb)'
+2019-06-04 20:26:42.710 +02:00 [INF] Request finished in 512.9077ms 200 application/json; charset=utf-8
+2019-06-04 20:27:10.377 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Products/10  
+2019-06-04 20:27:10.383 +02:00 [INF] Executing endpoint 'OMSWeb.Controllers.ProductsController.GetProduct (OMSWeb)'
+2019-06-04 20:27:10.386 +02:00 [INF] Route matched with {action = "GetProduct", controller = "Products"}. Executing action OMSWeb.Controllers.ProductsController.GetProduct (OMSWeb)
+2019-06-04 20:27:10.414 +02:00 [INF] Executing action method OMSWeb.Controllers.ProductsController.GetProduct (OMSWeb) with arguments (["10"]) - Validation state: "Valid"
+2019-06-04 20:27:10.419 +02:00 [INF] Entity Framework Core 2.2.4-servicing-10062 initialized 'NorthwindContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-06-04 20:27:10.451 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [x].[ProductID], [x].[CategoryID], [x].[Discontinued], [x].[ProductName], [x].[QuantityPerUnit], [x].[ReorderLevel], [x].[SupplierID], [x].[UnitPrice], [x].[UnitsInStock], [x].[UnitsOnOrder]
+FROM [Products] AS [x]
+WHERE ([x].[Discontinued] = 0) AND ([x].[ProductID] = @__id_0)
+2019-06-04 20:27:10.464 +02:00 [INF] Executed action method OMSWeb.Controllers.ProductsController.GetProduct (OMSWeb), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 45.9328ms.
+2019-06-04 20:27:10.468 +02:00 [INF] Executing ObjectResult, writing value of type 'OMSWeb.Api.Models.Products.ProductDto'.
+2019-06-04 20:27:10.475 +02:00 [INF] Executed action OMSWeb.Controllers.ProductsController.GetProduct (OMSWeb) in 63.7999ms
+2019-06-04 20:27:10.514 +02:00 [INF] Executed endpoint 'OMSWeb.Controllers.ProductsController.GetProduct (OMSWeb)'
+2019-06-04 20:27:10.534 +02:00 [INF] Request finished in 157.0768ms 200 application/json; charset=utf-8
+2019-06-04 20:27:10.680 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/favicon.ico  
+2019-06-04 20:27:10.684 +02:00 [INF] Request finished in 3.711ms 404 

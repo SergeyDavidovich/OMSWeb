@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore;
+﻿//https://www.toptal.com/asp-dot-net/asp-net-web-api-tutorial
+
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Serilog;
 using Serilog.Events;
 using System;
 using System.IO;
+using System.Diagnostics;
 
 //TODO: Implementing Cashing
 //TODO: Implementing Authentification and Authorisation

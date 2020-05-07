@@ -1,0 +1,8 @@
+2019-05-29 11:57:15.302 +02:00 [INF] Starting web host
+2019-05-29 11:57:19.044 +02:00 [INF] User profile is available. Using 'C:\Users\write\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-05-29 11:57:20.905 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger  
+2019-05-29 11:57:20.942 +02:00 [INF] Request finished in 39.5176ms 302 
+2019-05-29 11:57:20.957 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/index.html  
+2019-05-29 11:57:21.065 +02:00 [INF] Request finished in 108.0878ms 200 text/html; charset=utf-8
+2019-05-29 11:57:21.403 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/v1/swagger.json  
+2019-05-29 11:57:22.683 +02:00 [INF] Request finished in 1279.2572ms 200 application/json; charset=utf-8

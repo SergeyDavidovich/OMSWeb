@@ -1,0 +1,5 @@
+2019-06-22 14:00:00.983 +02:00 [INF] Executed action method OMSWeb.Controllers.OrdersController.GetOrders (OMSWeb), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 4396.9112000000005ms.
+2019-06-22 14:00:01.054 +02:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[OMSWeb.Api.Models.Orders.IndexOrderDto, OMSWeb.Api.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2019-06-22 14:00:01.154 +02:00 [INF] Executed action OMSWeb.Controllers.OrdersController.GetOrders (OMSWeb) in 6623.254ms
+2019-06-22 14:00:01.158 +02:00 [INF] Executed endpoint 'OMSWeb.Controllers.OrdersController.GetOrders (OMSWeb)'
+2019-06-22 14:00:01.174 +02:00 [INF] Request finished in 6853.1358ms 200 application/json; charset=utf-8

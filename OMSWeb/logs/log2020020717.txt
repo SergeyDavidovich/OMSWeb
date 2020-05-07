@@ -1,0 +1,35 @@
+2020-02-07 17:40:11.138 +01:00 [INF] Starting web host
+2020-02-07 17:40:22.158 +01:00 [INF] User profile is available. Using 'C:\Users\write\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-02-07 17:40:22.651 +01:00 [INF] Creating key "28c99260-cf21-4db1-8a61-4bcec2989ff1" with creation date "2020-02-07T16:40:22.6460841+00:00", activation date "2020-02-07T16:40:22.1685060+00:00", and expiration date "2020-05-07T16:40:22.1685060+00:00".
+2020-02-07 17:40:22.733 +01:00 [INF] Writing data to file 'C:\Users\write\AppData\Local\ASP.NET\DataProtection-Keys\key-28c99260-cf21-4db1-8a61-4bcec2989ff1.xml'.
+2020-02-07 17:40:25.384 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger  
+2020-02-07 17:40:25.442 +01:00 [INF] Request finished in 50.8763ms 302 
+2020-02-07 17:40:25.444 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/index.html  
+2020-02-07 17:40:25.608 +01:00 [INF] Request finished in 164.3225ms 200 text/html; charset=utf-8
+2020-02-07 17:40:25.656 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui.css  
+2020-02-07 17:40:25.657 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui-bundle.js  
+2020-02-07 17:40:25.659 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js  
+2020-02-07 17:40:25.841 +01:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2020-02-07 17:40:25.850 +01:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2020-02-07 17:40:25.852 +01:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2020-02-07 17:40:25.865 +01:00 [INF] Request finished in 209.2498ms 200 text/css
+2020-02-07 17:40:25.865 +01:00 [INF] Request finished in 206.0373ms 200 application/javascript
+2020-02-07 17:40:25.866 +01:00 [INF] Request finished in 208.4763ms 200 application/javascript
+2020-02-07 17:40:26.315 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/v1/swagger.json  
+2020-02-07 17:40:26.384 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/favicon-32x32.png  
+2020-02-07 17:40:26.385 +01:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2020-02-07 17:40:26.416 +01:00 [INF] Request finished in 32.6639ms 200 image/png
+2020-02-07 17:40:28.291 +01:00 [INF] Request finished in 1975.7204ms 200 application/json; charset=utf-8
+2020-02-07 17:40:37.333 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Categories  
+2020-02-07 17:40:37.409 +01:00 [INF] Executing endpoint 'OMSWeb.Controllers.CategoriesController.GetCategories (OMSWeb)'
+2020-02-07 17:40:37.453 +01:00 [INF] Route matched with {action = "GetCategories", controller = "Categories"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[OMSWeb.Api.Models.Categories.CategoryDto]] GetCategories() on controller OMSWeb.Controllers.CategoriesController (OMSWeb).
+2020-02-07 17:40:38.537 +01:00 [INF] Executing action method OMSWeb.Controllers.CategoriesController.GetCategories (OMSWeb) - Validation state: "Valid"
+2020-02-07 17:40:39.195 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'NorthwindContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-02-07 17:40:40.026 +01:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CategoryID], [c].[CategoryName], [c].[Description], [c].[Picture]
+FROM [Categories] AS [c]
+2020-02-07 17:40:40.142 +01:00 [INF] Executed action method OMSWeb.Controllers.CategoriesController.GetCategories (OMSWeb), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1598.4395000000002ms.
+2020-02-07 17:40:40.157 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[OMSWeb.Api.Models.Categories.CategoryDto, OMSWeb.Api.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-07 17:40:40.184 +01:00 [INF] Executed action OMSWeb.Controllers.CategoriesController.GetCategories (OMSWeb) in 2720.0476000000003ms
+2020-02-07 17:40:40.186 +01:00 [INF] Executed endpoint 'OMSWeb.Controllers.CategoriesController.GetCategories (OMSWeb)'
+2020-02-07 17:40:40.193 +01:00 [INF] Request finished in 2859.8294ms 200 application/json; charset=utf-8

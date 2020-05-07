@@ -1,0 +1,16 @@
+2019-05-29 11:48:54.950 +02:00 [INF] Starting web host
+2019-05-29 11:48:58.953 +02:00 [INF] User profile is available. Using 'C:\Users\write\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-05-29 11:49:02.652 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger  
+2019-05-29 11:49:02.699 +02:00 [INF] Request finished in 51.4764ms 302 
+2019-05-29 11:49:02.719 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/index.html  
+2019-05-29 11:49:02.909 +02:00 [INF] Request finished in 190.8956ms 200 text/html; charset=utf-8
+2019-05-29 11:49:03.340 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/v1/swagger.json  
+2019-05-29 11:49:05.943 +02:00 [INF] Request finished in 2602.5238ms 200 application/json; charset=utf-8
+2019-05-29 11:49:31.196 +02:00 [INF] Starting web host
+2019-05-29 11:49:33.856 +02:00 [INF] User profile is available. Using 'C:\Users\write\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-05-29 11:49:37.688 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger  
+2019-05-29 11:49:37.736 +02:00 [INF] Request finished in 50.718ms 302 
+2019-05-29 11:49:37.749 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/index.html  
+2019-05-29 11:49:37.894 +02:00 [INF] Request finished in 145.287ms 200 text/html; charset=utf-8
+2019-05-29 11:49:38.314 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/v1/swagger.json  
+2019-05-29 11:49:40.827 +02:00 [INF] Request finished in 2512.1468ms 200 application/json; charset=utf-8

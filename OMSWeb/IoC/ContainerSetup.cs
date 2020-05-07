@@ -69,6 +69,7 @@ namespace OMSWeb.IoC
             services.AddScoped<IShippersQueryProcessor, ShippersQueryProcessor>();
         }
 
+        [Obsolete]
         private static void ConfigureAutoMapper(IServiceCollection services)
         {
             services.AddAutoMapper();
