@@ -6,7 +6,6 @@ using Serilog;
 using Serilog.Events;
 using System;
 using System.IO;
-using System.Diagnostics;
 
 //TODO: Implementing Cashing
 //TODO: Implementing Authentification and Authorisation
