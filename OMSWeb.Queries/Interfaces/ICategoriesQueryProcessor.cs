@@ -13,7 +13,7 @@ namespace OMSWeb.Queries.Queries
         IQueryable<Category> Get();
         Category Get(int id);
         Task<Category> CreateAsync(CreateCategoryDto model);
-        Task<Product> Update(int id, Product model);
+        Task<Product> Update(int id, CreateCategoryDto model);
         //Task Delete(int id);
     }
 }

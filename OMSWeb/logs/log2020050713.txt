@@ -1,0 +1,75 @@
+2020-05-07 13:35:53.362 +02:00 [INF] Starting web host
+2020-05-07 13:36:01.920 +02:00 [INF] User profile is available. Using 'C:\Users\write\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-05-07 13:36:02.413 +02:00 [INF] Creating key "1e36fdbe-8bfc-476c-8f7c-357d027142f2" with creation date "2020-05-07T11:36:02.4093389+00:00", activation date "2020-05-07T16:40:22.1685060+00:00", and expiration date "2020-08-05T11:36:01.9297985+00:00".
+2020-05-07 13:36:02.512 +02:00 [INF] Writing data to file 'C:\Users\write\AppData\Local\ASP.NET\DataProtection-Keys\key-1e36fdbe-8bfc-476c-8f7c-357d027142f2.xml'.
+2020-05-07 13:36:05.211 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger  
+2020-05-07 13:36:05.282 +02:00 [INF] Request finished in 50.7842ms 302 
+2020-05-07 13:36:05.284 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/index.html  
+2020-05-07 13:36:05.542 +02:00 [INF] Request finished in 257.971ms 200 text/html; charset=utf-8
+2020-05-07 13:36:05.580 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js  
+2020-05-07 13:36:05.581 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui-bundle.js  
+2020-05-07 13:36:05.581 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui.css  
+2020-05-07 13:36:05.751 +02:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2020-05-07 13:36:05.751 +02:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2020-05-07 13:36:05.771 +02:00 [INF] Request finished in 191.1971ms 200 application/javascript
+2020-05-07 13:36:05.771 +02:00 [INF] Request finished in 190.6337ms 200 text/css
+2020-05-07 13:36:05.844 +02:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2020-05-07 13:36:05.847 +02:00 [INF] Request finished in 266.5529ms 200 application/javascript
+2020-05-07 13:36:06.188 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/v1/swagger.json  
+2020-05-07 13:36:06.374 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/favicon-32x32.png  
+2020-05-07 13:36:06.389 +02:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2020-05-07 13:36:06.391 +02:00 [INF] Request finished in 17.484ms 200 image/png
+2020-05-07 13:36:07.854 +02:00 [INF] Request finished in 1666.8042ms 200 application/json; charset=utf-8
+2020-05-07 13:36:17.508 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Categories  
+2020-05-07 13:36:17.585 +02:00 [INF] Executing endpoint 'OMSWeb.Controllers.CategoriesController.GetCategories (OMSWeb)'
+2020-05-07 13:36:17.639 +02:00 [INF] Route matched with {action = "GetCategories", controller = "Categories"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[OMSWeb.Api.Models.Categories.CategoryDto]] GetCategories() on controller OMSWeb.Controllers.CategoriesController (OMSWeb).
+2020-05-07 13:36:18.781 +02:00 [INF] Executing action method OMSWeb.Controllers.CategoriesController.GetCategories (OMSWeb) - Validation state: "Valid"
+2020-05-07 13:36:19.451 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'NorthwindContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-05-07 13:36:20.305 +02:00 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CategoryID], [c].[CategoryName], [c].[Description], [c].[Picture]
+FROM [Categories] AS [c]
+2020-05-07 13:36:20.425 +02:00 [INF] Executed action method OMSWeb.Controllers.CategoriesController.GetCategories (OMSWeb), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1637.5291ms.
+2020-05-07 13:36:20.442 +02:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[OMSWeb.Api.Models.Categories.CategoryDto, OMSWeb.Api.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-05-07 13:36:20.475 +02:00 [INF] Executed action OMSWeb.Controllers.CategoriesController.GetCategories (OMSWeb) in 2826.0894000000003ms
+2020-05-07 13:36:20.481 +02:00 [INF] Executed endpoint 'OMSWeb.Controllers.CategoriesController.GetCategories (OMSWeb)'
+2020-05-07 13:36:20.489 +02:00 [INF] Request finished in 2981.1518ms 200 application/json; charset=utf-8
+2020-05-07 13:36:34.420 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Orders  
+2020-05-07 13:36:34.425 +02:00 [INF] Executing endpoint 'OMSWeb.Controllers.OrdersController.GetOrders (OMSWeb)'
+2020-05-07 13:36:34.430 +02:00 [INF] Route matched with {action = "GetOrders", controller = "Orders"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[OMSWeb.Api.Models.Orders.IndexOrderDto]] GetOrders() on controller OMSWeb.Controllers.OrdersController (OMSWeb).
+2020-05-07 13:36:34.444 +02:00 [INF] Executing action method OMSWeb.Controllers.OrdersController.GetOrders (OMSWeb) - Validation state: "Valid"
+2020-05-07 13:36:34.455 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'NorthwindContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-05-07 13:36:34.761 +02:00 [INF] Executed DbCommand (137ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[OrderID], [o].[CustomerID], [o].[EmployeeID], [o].[Freight], [o].[OrderDate], [o].[RequiredDate], [o].[ShipAddress], [o].[ShipCity], [o].[ShipCountry], [o].[ShipName], [o].[ShipPostalCode], [o].[ShipRegion], [o].[ShipVia], [o].[ShippedDate], [o.Customer].[CustomerID], [o.Customer].[Address], [o.Customer].[City], [o.Customer].[CompanyName], [o.Customer].[ContactName], [o.Customer].[ContactTitle], [o.Customer].[Country], [o.Customer].[Fax], [o.Customer].[Phone], [o.Customer].[PostalCode], [o.Customer].[Region], [o.Employee].[EmployeeID], [o.Employee].[Address], [o.Employee].[BirthDate], [o.Employee].[City], [o.Employee].[Country], [o.Employee].[Extension], [o.Employee].[FirstName], [o.Employee].[HireDate], [o.Employee].[HomePhone], [o.Employee].[LastName], [o.Employee].[Notes], [o.Employee].[Photo], [o.Employee].[PhotoPath], [o.Employee].[PostalCode], [o.Employee].[Region], [o.Employee].[ReportsTo], [o.Employee].[Title], [o.Employee].[TitleOfCourtesy]
+FROM [Orders] AS [o]
+LEFT JOIN [Customers] AS [o.Customer] ON [o].[CustomerID] = [o.Customer].[CustomerID]
+LEFT JOIN [Employees] AS [o.Employee] ON [o].[EmployeeID] = [o.Employee].[EmployeeID]
+2020-05-07 13:36:35.245 +02:00 [INF] Executed action method OMSWeb.Controllers.OrdersController.GetOrders (OMSWeb), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 797.8904ms.
+2020-05-07 13:36:35.249 +02:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[OMSWeb.Api.Models.Orders.IndexOrderDto, OMSWeb.Api.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-05-07 13:36:35.285 +02:00 [INF] Executed action OMSWeb.Controllers.OrdersController.GetOrders (OMSWeb) in 850.0403ms
+2020-05-07 13:36:35.287 +02:00 [INF] Executed endpoint 'OMSWeb.Controllers.OrdersController.GetOrders (OMSWeb)'
+2020-05-07 13:36:35.290 +02:00 [INF] Request finished in 869.4942ms 200 application/json; charset=utf-8
+2020-05-07 13:37:39.459 +02:00 [INF] Starting web host
+2020-05-07 13:37:54.644 +02:00 [INF] Starting web host
+2020-05-07 13:37:57.175 +02:00 [INF] User profile is available. Using 'C:\Users\write\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-05-07 13:37:57.601 +02:00 [FTL] Application startup exception
+System.InvalidOperationException: Application is running inside IIS process but is not configured to use IIS server.
+   at Microsoft.AspNetCore.Server.IIS.Core.IISServerSetupFilter.<>c__DisplayClass2_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.AutoRequestServicesStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2020-05-07 13:41:08.974 +02:00 [INF] Starting web host
+2020-05-07 13:41:11.987 +02:00 [INF] User profile is available. Using 'C:\Users\write\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-05-07 13:41:12.216 +02:00 [FTL] Application startup exception
+System.InvalidOperationException: Application is running inside IIS process but is not configured to use IIS server.
+   at Microsoft.AspNetCore.Server.IIS.Core.IISServerSetupFilter.<>c__DisplayClass2_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.AutoRequestServicesStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2020-05-07 13:42:15.102 +02:00 [INF] Starting web host
+2020-05-07 13:42:17.713 +02:00 [INF] User profile is available. Using 'C:\Users\write\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-05-07 13:42:17.955 +02:00 [FTL] Application startup exception
+System.InvalidOperationException: Application is running inside IIS process but is not configured to use IIS server.
+   at Microsoft.AspNetCore.Server.IIS.Core.IISServerSetupFilter.<>c__DisplayClass2_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.AutoRequestServicesStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()

@@ -53,9 +53,7 @@ namespace OMSWeb.Queries.Queries
             var item = GetQuery().FirstOrDefault(x => x.ProductId == id);
 
             if (item == null)
-            {
                 throw new NotFoundException($"Product {id} is not found");
-            }
 
             item.ProductName = model.ProductName;
             item.UnitPrice = model.UnitPrice;

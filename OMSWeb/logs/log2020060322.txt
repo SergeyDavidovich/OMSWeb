@@ -1,0 +1,16 @@
+2020-06-03 22:00:55.545 +02:00 [INF] Starting web host
+2020-06-03 22:01:05.446 +02:00 [INF] User profile is available. Using 'C:\Users\write\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-06-03 22:01:06.279 +02:00 [FTL] Application startup exception
+System.InvalidOperationException: Application is running inside IIS process but is not configured to use IIS server.
+   at Microsoft.AspNetCore.Server.IIS.Core.IISServerSetupFilter.<>c__DisplayClass2_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.AutoRequestServicesStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2020-06-03 22:02:29.951 +02:00 [INF] Starting web host
+2020-06-03 22:02:32.229 +02:00 [INF] User profile is available. Using 'C:\Users\write\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-06-03 22:02:32.346 +02:00 [FTL] Application startup exception
+System.InvalidOperationException: Application is running inside IIS process but is not configured to use IIS server.
+   at Microsoft.AspNetCore.Server.IIS.Core.IISServerSetupFilter.<>c__DisplayClass2_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.AutoRequestServicesStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()

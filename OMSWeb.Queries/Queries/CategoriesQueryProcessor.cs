@@ -46,7 +46,7 @@ namespace OMSWeb.Queries.Queries
             return item;
         }
 
-        public Task<Product> Update(int id, Product model)
+        public Task<Category> Update(int id, Category model)
         {
             throw new NotImplementedException();
         }
