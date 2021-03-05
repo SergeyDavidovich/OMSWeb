@@ -11,7 +11,7 @@ Microsoft SQL Server 2012 Express Edition or higher, and DB Northwind attached
 [View on Github](https://github.com/StupeniNET/OMSWeb)
 
 #### Frameworks and libraries used:
-- *Platform* - ASP.Net Core
+- *Platform* - ASP.Net Core 2.1
 - *Documentation* - `Swagger`
 - *Programming language* - `C#`
 - *Data storage* - `SQL Server 2017 DE`
